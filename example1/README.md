@@ -1,0 +1,1 @@
+> NOTE: Use [example3](https://github.com/williamcanin/crud_rust_mongodb/tree/main/example3), it is modular and dynamic.
