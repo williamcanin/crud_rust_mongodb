@@ -9,7 +9,7 @@ use crate::users::model::UserFields;
 async fn main() -> Result<(), Box<dyn std::error::Error>> {
     // Exemplo de uri:
     // localhost: "mongodb://localhost:27017";
-    // remoto: "mongodb+srv://<username>:<db_password>@cluster0.ofbyy.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
+    // remoto: "mongodb+srv://<username>:<db_password>@cluster0.ofbyy.mongodb.net/?retryWrites=true&w=majority&appName=<cluster_name>"
 
     let db = database::Connection::new(connection_data()).await?;
     let user_collection = db.get_collection::<UserFields>("users");
