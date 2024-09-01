@@ -10,7 +10,7 @@ use std::collections::HashMap;
 // Insert and update at the same time, getting the id.
 #[allow(dead_code)]
 pub async fn data<'a, T: Into<Bson> + Send + Sync + std::clone::Clone>(
-    con: Connection<'a>,
+    con: &Connection<'a>,
     map: HashMap<&str, T>,
 ) -> mongodb::error::Result<ObjectId> {
     // Configura as opções do cliente MongoDB

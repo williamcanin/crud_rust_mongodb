@@ -28,7 +28,7 @@ impl Filter {
 }
 
 #[allow(dead_code)]
-pub async fn data<'a, T>(con: Connection<'a>, filter: Filter) -> mongodb::error::Result<Vec<T>>
+pub async fn data<'a, T>(con: &Connection<'a>, filter: Filter) -> mongodb::error::Result<Vec<T>>
 where
     T: DeserializeOwned, // Garante que T pode ser desserializado a partir de BSON
     T: Send + Sync + 'static, // Adiciona requisitos para async
