@@ -1,4 +1,4 @@
-# CRUD examples between MongoDB and [Rust](https://www.rust-lang.org/)
+# CRUD examples between [MongoDB](https://www.mongodb.com) and [Rust](https://www.rust-lang.org/)
 
 ## Requirements
 
