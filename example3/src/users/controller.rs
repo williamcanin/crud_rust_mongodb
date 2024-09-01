@@ -1,5 +1,5 @@
 use super::model::UserFields;
-use mongodb::bson::oid::ObjectId;
+use mongodb::bson::{oid::ObjectId, to_document};
 use mongodb::{bson::doc, Collection};
 
 use std::error::Error;
@@ -48,13 +48,13 @@ impl UserController {
   ) -> Result<(), Box<dyn Error>> {
     let id = ObjectId::parse_str(id)?;
 
+    // Converte o struct UserFields para um Document BSON
+    let updated_doc = to_document(&updated_user)?;
+
     let result = self
-            .collection
-            .update_one(
-                doc! { "_id": id },
-                doc! { "$set": { "name": updated_user.name.clone(), "email": updated_user.email, "country": updated_user.country } },
-            )
-            .await?;
+      .collection
+      .update_one(doc! { "_id": id }, doc! { "$set": updated_doc })
+      .await?;
 
     if result.matched_count > 0 {
       println!("Usuário {} atualizado com sucesso!", updated_user.name);
