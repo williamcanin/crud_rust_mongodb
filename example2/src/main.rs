@@ -36,8 +36,8 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
     read_user(&collection, &id).await?;
 
     let updated_user = User {
-        name: String::from("William Updated"),
-        email: String::from("william.canin.updated@example.com"),
+        name: String::from("William Canin"),
+        email: String::from("william.canin@example.com"),
     };
 
     update_user(&collection, &id, updated_user).await?;
