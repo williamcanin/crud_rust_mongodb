@@ -1,4 +1,4 @@
-# :crab: CRUD examples between [Rust](https://www.rust-lang.org/) and [MongoDB](https://www.mongodb.com)
+# :crab: CRUD example between [Rust](https://www.rust-lang.org/) and [MongoDB](https://www.mongodb.com)
 
 ## Requirements
 
